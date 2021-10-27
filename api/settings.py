@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Vendor applications
+    'rest_framework',
 
     # Created applications
     'api.apps.sales',
