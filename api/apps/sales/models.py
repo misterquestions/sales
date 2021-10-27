@@ -3,11 +3,20 @@ from django.db import models
 
 from api.apps.teams.models import Team
 
+USER_SELLER = 'SL'
+USER_CLIENT = 'CL'
+
+USER_TYPE_CHOICES = [
+    (USER_SELLER, 'Seller'),
+    (USER_CLIENT, 'Client'),
+]
+
 
 class User(AbstractUser):
     class Meta:
         db_table = 'users'
 
+    type = models.CharField(max_length=2, choices=USER_TYPE_CHOICES, default=USER_CLIENT)
     team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
 
 
