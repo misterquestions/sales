@@ -12,7 +12,7 @@ services:
     env_file: .env
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./api:/code
+      - .:/code
     ports:
       - 8000:8000
     depends_on:
