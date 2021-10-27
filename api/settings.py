@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Vendor applications
 
     # Created applications
+    'api.apps.clients',
     'api.apps.sales',
     'api.apps.teams',
 ]
