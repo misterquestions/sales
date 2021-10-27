@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Vendor applications
 
     # Created applications
+    'api.apps.sales',
+    'api.apps.teams',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +90,9 @@ DATABASES = {
     }
 }
 
+# Custom user model
+
+AUTH_USER_MODEL = 'sales.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
