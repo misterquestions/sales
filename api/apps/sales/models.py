@@ -16,7 +16,11 @@ class User(AbstractUser):
     class Meta:
         db_table = 'users'
 
-    type = models.CharField(max_length=2, choices=USER_TYPE_CHOICES, default=USER_CLIENT)
+    class UserType(models.TextChoices):
+        SELLER = 'SL', 'Seller'
+        CLIENT = 'CL', 'Client'
+
+    type = models.CharField(max_length=2, choices=UserType.choices, default=UserType.CLIENT)
     team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
 
 
