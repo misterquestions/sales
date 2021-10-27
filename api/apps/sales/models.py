@@ -5,10 +5,16 @@ from api.apps.teams.models import Team
 
 
 class User(AbstractUser):
+    class Meta:
+        db_table = 'users'
+
     team = models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
 
 
 class Sale(models.Model):
+    class Meta:
+        db_table = 'sales'
+
     created_at = models.DateTimeField(null=False)
     amount = models.DecimalField(max_digits=6, decimal_places=2, null=False)
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
